@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import handler404
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
@@ -29,3 +32,8 @@ urlpatterns = [
     path("sxema/", SpectacularAPIView.as_view(), name="schema"),
     path("api/v1/sxema/redoc/", SpectacularSwaggerView.as_view(url_name="schema"), name="redoc"),
 ]
+
+handler404 = 'app.views.error404'
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

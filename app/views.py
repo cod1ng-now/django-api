@@ -10,6 +10,10 @@ from django.db.models import  Q
 
 
 
+def error404(request, exception):
+    return render(request,'404.html')
+    
+    
 class PostListView(ListView):
     model = Post
     template_name = 'home.html'
