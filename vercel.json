@@ -1,22 +1,15 @@
 {
     "builds": [
       {
-        "src": "app/wsgi.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "api/wsgi.py",
-        "use": "@vercel/python"
+        "src": "projectapi/wsgi.py",
+        "use": "@vercel/python",
+        "config": {"maxLabmdaSize": "15mb", "runtime": "python3.116"}
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
         "dest": "app/wsgi.py"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "api/wsgi.py"
       }
     ]
   }
