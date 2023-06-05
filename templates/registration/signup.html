@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          height: 300px;
+          "></div>
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Log in now</h2>
+            <form method="POST">
+                {% csrf_token %}
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                  <div class="form-outline mb-4">
+                    <input type="text" name="username" class="form-control" maxlength="150" autofocus="" required="" id="id_username">  
+                    <label class="form-label" for="form3Example2">Username</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-outline mb-4">
+                    <input type="text" name="first_name" class="form-control" maxlength="150" id="id_first_name">
+                    <label class="form-label" for="form3Example2">First_name</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" name="last_name" maxlength="150" class="form-control" id="id_last_name">
+                    <label class="form-label" for="form3Example2">Last_name</label>
+                  </div>
+              </div>
+  
+              <!-- Email input -->
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="email" name="email" maxlength="254" class="form-control" id="id_email">
+                <label class="form-label" for="form3Example4">eMail</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="number" name="age" min="0" class="form-control" id="id_age">
+                <label class="form-label" for="form3Example4">Age</label>
+              </div>
+  
+              <div class="form-outline mb-4">
+                <input type="password" name="password1" class="form-control" autocomplete="new-password" required="" id="id_password1" aria-autocomplete="list">
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+  
+  
+              <div class="form-outline mb-4">
+                <input type="password" name="password2" class="form-control" autocomplete="new-password" required="" id="id_password2">
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+  
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                <label class="form-check-label" for="form2Example33">
+                  Subscribe to our newsletter
+                        </label>
+                    </div>
+  
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Log IN
+              </button>
+  
+              <!-- Register buttons -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+{% endblock content %}
+

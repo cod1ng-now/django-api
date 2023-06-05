@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+    <h2 class="mt-3">{{ post.title }}</h2>
+    <div class="card">
+        <div class="card-body">{{ post.body }}</div>
+    </div>
+        <p><small class="text-muted"> Yaralgan: {{ post.creates }} | Yaratuvchi: {{ post.author }}</small></p>
+        {% if post.author == request.user %}
+            <small class="text-muted">
+                <a href="{% url "update" post.id %}">Tahrirlash</a> |
+                <a href="{% url "delete" post.id %}">O'chirish</a>
+            </small>
+        {% endif %}
+    </div>
+</center>
+    <style>
+body{
+    margin-top:80px;
+}.card{
+    margin-right:20px;
+    margin-left:20px;
+}
+</style>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="mt-3">Post Yaratish</h2>
+
+    <div class="card mt-3">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <center>
+               {{ form.title }}<br>
+               {{ form.title.label }}<br><br>
+               {{ form.body }}<br>
+               {{ form.body.label }}<br><br>
+               <button type="submit" class="btn btn-primary">Tasdiqlash</button>
+            </center>
+        </form>
+        <style>
+           input, textarea{
+           width:80%;
+           background:#dee2e8;
+           border:none;
+           border-radius:5px;
+           transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+           font-family: inherit;
+               }input{
+                   height:30px;
+               }
+        </style>
+    </div>
+    </div>
+    <style>
+body{
+   margin-top:80px;
+}
+</style>
+{% endblock content %}

@@ -1,0 +1,36 @@
+ {% extends 'base.html' %}
+ {% block content %}
+     <h2 class="mt-3">Post Yaratish</h2>
+
+     <div class="card mt-3">
+     <div class="card-body">
+         <form method="post">
+             {% csrf_token %}
+             <center>
+                {{ form.title }}<br>
+                {{ form.title.label }}<br><br>
+                <textarea width="80%" name="body" cols="40" rows="10" required="" id="id_body" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: &quot;Full&quot;, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_body" data-type="ckeditortype" style="height: 239px;"></textarea><br>
+                <label>Text</label><br><br>
+                <button type="submit" class="btn btn-primary">Tasdiqlash</button>
+             </center>
+         </form>
+         <style>
+            input, textarea{
+            width:80%;
+            background:#dee2e8;
+            border:none;
+            border-radius:5px;
+            transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            font-family: inherit;
+                }input{
+                    height:30px;
+                }
+         </style>
+     </div>
+     </div>
+     <style>
+body{
+    margin-top:80px;
+}
+</style>
+ {% endblock content %}
