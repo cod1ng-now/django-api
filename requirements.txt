@@ -12,6 +12,7 @@ django-cors-headers
 django-filter
 django-js-asset
 django-rest-framework
+django-allauth
 djangorestframework
 djangorestframework-simplejwt
 drf-spectacular
