@@ -30,3 +30,4 @@ sqlparse
 tzdata
 uritemplate
 urllib3
+gunicorn
